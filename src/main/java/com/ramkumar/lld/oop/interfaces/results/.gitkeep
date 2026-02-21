@@ -1,0 +1,41 @@
+Test 1 PASSED: All three notification types created
+
+── Test 2: getSummary() ──────────────────────────────
+[NOTIF-001]EMAIL -> alice@example.com: Your order is confirmed!
+[NOTIF-002]SMS -> Bob: Your OTP is 123456
+[NOTIF-003]PUSH -> Carol: Flash sale starts now!
+
+── Test 3: send() ────────────────────────────────────
+Sent Email to : alice@example.comfrom : shop@store.com
+email.send() = true
+sms.send()   = true
+Sent PUSH to Carol
+push.send()  = true
+
+── Test 4: getLastLog() default method ───────────────
+Before any log: No logs yet
+Sent PUSH to Dave
+After send: Sent PUSH to Dave
+
+── Test 5: Interface segregation ─────────────────────
+email instanceof Loggable: true
+sms   instanceof Loggable: false
+push  instanceof Loggable: true
+
+── Test 6: NotificationService ───────────────────────
+Sent Email to : alice@example.comfrom : shop@store.com
+Sent PUSH to Carol
+sendAll() successful: 3
+
+── Test 7: Filtering ─────────────────────────────────
+SMS channel count: 1
+Priority >= 3 count: 2
+Loggable count: 2
+
+── Test 8: SMS 160-char validation ───────────────────
+Long SMS send() = false
+
+── Test 9: Validation ────────────────────────────────
+Test 9 PASSED: Illegal Argument for Recipient, cannot null or blank
+
+All tests completed.
