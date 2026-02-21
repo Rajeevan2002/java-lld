@@ -1,0 +1,8 @@
+[Bank-Account Account Number = [ACC-1]  Account Holder = [ Alice ]  Balance = [ 0.0 ]  Account Type = [ SAVINGS]   ]
+[Bank-Account Account Number = [ACC-2]  Account Holder = [ Bob ]  Balance = [ 0.0 ]  Account Type = [ CURRENT]   ]
+[Bank-Account Account Number = [ACC-3]  Account Holder = [ Carol ]  Balance = [ 5000.0 ]  Account Type = [ SAVINGS]   ]
+acc1 after transactions: 750.0
+Copy of acc3: [Bank-Account Account Number = [ACC-4]  Account Holder = [ Carol ]  Balance = [ 5000.0 ]  Account Type = [ SAVINGS]   ]
+Same object? false
+Same account number? false
+Caught: Withdrawal Amount Cannot be Greater than Balance
