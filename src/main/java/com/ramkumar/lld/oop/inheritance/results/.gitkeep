@@ -1,0 +1,10 @@
+Test 1 PASSED: All employee types added
+
+── Test 2: processSalaries() ────────────────────────
+
+Test 3: Total payroll = ₹424,000.00
+Test 4: Highest paid = Dave
+Test 5: Bob salary 40,000.00 → 120,000.00
+Exception in thread "main" java.lang.IllegalArgumentException: Annual Salary cannot be negative or 0
+	at com.ramkumar.lld.oop.inheritance.practice.PayrollPractice$FullTimeEmployee.<init>(PayrollPractice.java:163)
+	at com.ramkumar.lld.oop.inheritance.practice.PayrollPractice.main(PayrollPractice.java:351)
