@@ -1,0 +1,24 @@
+Test 1: getFinalPrice = ₹50075.00 (expected ₹50075.00)
+Test 1 PASSED
+Test 2: getFinalPrice = ₹45212.50 (expected ₹45212.50)
+Test 2 PASSED
+Test 3: FlatDiscount floors at 0 → ₹0.00 (expected ₹0.00)
+Test 3 PASSED
+Test 4: checkout() = true (expected true)
+Test 4 PASSED
+Test 5: Before=₹50075.00 After=₹50212.50 (Express > Standard)
+Test 5 PASSED
+Test 6: Before=₹50212.50 After=₹40212.50 (20% discount applied)
+Test 6 PASSED
+
+── Test 7: getSummary() ──────────────────────────────
+[O001] Laptop | Base ₹50000 | Discount: 20.0% off | Shipping: Express (2d) | Payment: UPI | Final : ₹40212.50
+[O002] Phone | Base ₹50000 | Discount: 10.0% off | Shipping: Express (2d) | Payment: CREDIT_CARD | Final : ₹45212.50
+[O003] Book | Base ₹50000 | Discount: ₹60000.0 flat off | Shipping: Express (7d) | Payment: CASH | Final : ₹0.00
+
+── Test 8: Validation ────────────────────────────────
+Test 8a PASSED: Percentage Cannot be less than 0 or Greater than 100
+Test 8b PASSED: Percentage Cannot be less than 0 or Greater than 100
+Test 9 PASSED: Last Four Digits should only have numbers and lenfth should be 4
+
+All tests completed.
