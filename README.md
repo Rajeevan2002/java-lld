@@ -1,4 +1,4 @@
-# Java Low Level Design — Interview Preparation
+# Java Low Level Design
 
 A structured learning path for LLD concepts and interview problems in Java 21.
 
