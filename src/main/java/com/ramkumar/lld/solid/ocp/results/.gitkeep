@@ -1,0 +1,52 @@
+═══ Test 1: InsurancePolicy construction ════════════════
+policyId    : POL- 1
+holderName  : Alice
+policyType  : HEALTH
+baseAmount  : 10000.0
+holderAge   : 50
+Test 1 PASSED
+
+═══ Test 2: InsurancePolicy validation ══════════════════
+Test 2a PASSED: Holder Name cannot be null or Blank
+Test 2b PASSED: Base Amount cannot be less than zero and must be positive
+Test 2c PASSED: Age must be atleast 18 years old
+
+═══ Test 3: HealthStrategy — age > 45 (with surcharge) ═
+Premium (age 50): 12500.0
+Test 3 PASSED: true
+
+═══ Test 4: HealthStrategy — age <= 45 (no surcharge) ══
+Premium (age 40): 12000.0
+Test 4 PASSED: true
+
+═══ Test 5: AutoStrategy ════════════════════════════════
+Auto premium: 9200.0
+Test 5 PASSED: true
+
+═══ Test 6: HomeStrategy ════════════════════════════════
+Home premium: 13200.0
+Test 6 PASSED: true
+
+═══ Test 7: getSummary ══════════════════════════════════
+POL- 6 | AUTO | Grace | Base: ₹5000.00 | Premium : ₹5750.00
+Contains AUTO   : true
+Contains Grace  : true
+Contains 5750.00: true
+Test 7 PASSED
+
+═══ Test 8: isSupported ═════════════════════════════════
+HEALTH supported: true
+LIFE supported  : false
+Test 8 PASSED
+
+═══ Test 9: unknown type → exception ════════════════════
+Test 9 PASSED: No strategy register for : LIFE
+
+═══ Test 10: OCP proof — add LIFE with zero modification ═
+Life premium: 19500.0
+LIFE supported now: true
+Test 10 PASSED: true
+
+[Uncomment the test code above after implementing your classes]
+[For Test 10, add LifeStrategy as a new static inner class at the
+ bottom of this file — do NOT modify any existing class to make it work]
