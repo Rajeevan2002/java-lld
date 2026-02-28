@@ -1,0 +1,61 @@
+/Users/ramkumar/.jenv/versions/21/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=54648 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/ramkumar/Learning/java-lld/target/classes com.ramkumar.lld.solid.isp.practice.SmartHomePractice
+═══ Test 1: ISP Violation — ViolatingSmartBulb ══════════
+isOn: true
+❌ UnsupportedOperationException: SmartBulb: not supported
+❌ UnsupportedOperationException: SmartBulb: not supported
+Test 1 PASSED — ViolatingSmartBulb shows ISP violation
+
+═══ Test 2: SmartBulb — Switchable only ════════════════
+Bulb on: true
+Bulb on: false
+Test 2 PASSED: true
+
+═══ Test 3: SmartThermostat — temperature control ═══════
+Default temp: 20
+After set: 24
+Test 3 PASSED: true
+
+═══ Test 4: SmartThermostat — temperature validation ════
+Caught: Temperature should be >=10 and <=35
+Test 4 PASSED — temperature < 10 rejected
+Caught: Temperature should be >=10 and <=35
+Test 4b PASSED — temperature > 35 rejected
+
+═══ Test 5: SmartSpeaker — music and notification ═══════
+Track before play: null
+Currently Playing Track : Bohemian Rhapsody
+Track: null
+[SmartSpeaker: SPEAKER-001] 🔔 Dinner is ready!
+Track after stop: null
+Test 5 PASSED: true
+
+═══ Test 6: SmartSpeaker — blank track validation ═══════
+Caught: Track cannot be null
+Test 6 PASSED — blank track rejected
+
+═══ Test 7: SmartLock — lock/unlock/emergency ═══════════
+Initially locked: true
+After unlock: false
+After lock: true
+Emergency is being called !!!
+Test 7 PASSED: true
+
+═══ Test 8: SmartHub — allOn / allOff ══════════════════
+All devices on: true
+Test 8 PASSED: true
+
+═══ Test 9: SmartHub — setAllTemp ══════════════════════
+Thermostat temp: 22
+Test 9 PASSED: true
+
+═══ Test 10: SmartHub — triggerEmergency ════════════════
+Emergency is being called !!!
+Test 10 PASSED — emergency triggered on all emergency devices
+
+═══ Test 11: SmartHub — getOnlineDevices ════════════════
+Online devices: [BULB-H1, THERMO-H1]
+Count: 2
+Test 11 PASSED: true
+Test 11b PASSED — getOnlineDevices() returns unmodifiable list
+
+Process finished with exit code 0

@@ -1,0 +1,57 @@
+═══ Test 1: DIP Violation — ViolatingTripService ════════
+[ViolatingTripService] Booking Trip[[TRIP-001]]for RIDER-V1 from Airport to Hotel
+[InternalSMS] from: RIDER-V1 Your Ride got allotted
+[MySQLStore] Saving trip [[TRIP-001]]: for rider[RIDER-V1]  From Pickup: Airport To Drop :Hotel
+Test 1 PASSED — ViolatingTripService shows DIP violation
+
+═══ Test 2: bookTrip — trip created and saved ═══════════
+[InMemoryRepo] Saved: Trip[tripId=[TRIP-001],riderId=RIDER-001,pickupLocation=Airport,dropLocation=Hotel,fareAmount=134.00,status=PENDING]
+Trip: Trip[tripId=[TRIP-001],riderId=RIDER-001,pickupLocation=Airport,dropLocation=Hotel,fareAmount=134.00,status=PENDING]
+tripId starts with TRIP-: false
+Status PENDING: true
+fare > 0: true
+Test 2 PASSED: false
+
+═══ Test 3: bookTrip — tripId zero-padded (TRIP-001) ════
+tripId: [TRIP-001]
+Test 3 PASSED: false
+
+═══ Test 4: completeTrip — status changes to COMPLETED ══
+TRIP[[TRIP-001]] set to : COMPLETED
+[SMS -> [TRIP-001] ]: Trip Completed: [TRIP-001]
+Status after complete: COMPLETED
+Test 4 PASSED: true
+
+═══ Test 5: cancelTrip — status changes to CANCELLED ════
+[InMemoryRepo] Saved: Trip[tripId=[TRIP-002],riderId=RIDER-001,pickupLocation=Mall,dropLocation=Home,fareAmount=110.00,status=PENDING]
+[SMS -> [TRIP-002] ]: Trip cancelled: [TRIP-002]
+TRIP[[TRIP-002]] set to : CANCELLED
+Status after cancel: CANCELLED
+Test 5 PASSED: true
+
+═══ Test 6: getRiderHistory — returns all trips ══════════
+[InMemoryRepo] Saved: Trip[tripId=[TRIP-003],riderId=RIDER-001,pickupLocation=Office,dropLocation=Station,fareAmount=122.00,status=PENDING]
+RIDER-001 trip count: 3
+Test 6 PASSED: true
+
+═══ Test 7: unmodifiable history list ═══════════════════
+Test 7 PASSED — getRiderHistory() returns unmodifiable list
+
+═══ Test 8: DIP proof — swap FareCalculator (FixedFare) ══
+[InMemoryRepo] Saved: Trip[tripId=[TRIP-004],riderId=RIDER-002,pickupLocation=Anywhere,dropLocation=Somewhere,fareAmount=100.00,status=PENDING]
+Fixed fare trip: Trip[tripId=[TRIP-004],riderId=RIDER-002,pickupLocation=Anywhere,dropLocation=Somewhere,fareAmount=100.00,status=PENDING]
+fare == 100.0: true
+Test 8 PASSED: true
+
+═══ Test 9: DIP proof — swap RiderNotifier (Email) ══════
+[InMemoryRepo] Saved: Trip[tripId=[TRIP-005],riderId=RIDER-003,pickupLocation=Station,dropLocation=Airport,fareAmount=110.00,status=PENDING]
+Trip via email notifier: [TRIP-005]
+Test 9 PASSED — TripService unchanged, notifier swapped
+
+═══ Test 10: completeTrip on unknown ID — throws ═════════
+Caught: Trip not found: TRIP-999
+Test 10 PASSED — unknown tripId throws IllegalArgumentException
+
+═══ Test 11: null dependency in TripService — throws ═════
+Caught: Trip Repository cannot be null
+Test 11 PASSED — null dependency rejected at construction

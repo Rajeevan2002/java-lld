@@ -1,0 +1,56 @@
+═══ Test 1: BlogPost construction ═══════════════════════
+postId   : POST-001
+title    : Getting Started with Java
+author   : Alice
+Test 1 PASSED
+
+═══ Test 2: BlogPost validation (blank title) ═══════════
+Test 2 PASSED: Title Cannot be Blank!!
+
+═══ Test 3: PostValidator — valid post ══════════════════
+valid?  true
+error?  OK
+Test 3 PASSED
+
+═══ Test 4: PostValidator — short title ═════════════════
+valid?  false
+error?  Post Title should contain at least 5 characters
+Test 4 PASSED
+
+═══ Test 5: PostFormatter — text and HTML ═══════════════
+Getting Started with Java
+By Alice
+Java is a versatile, object-oriented language that has been a cornerstone of enterprise software development for over two decades. In this post we explore its core features.
+<h1>Getting Started with Java</h1><p>Java is a versatile, object-oriented language that has been a cornerstone of enterprise software development for over two decades. In this post we explore its core features.</p><em>Alice</em>
+Test 5 PASSED
+
+═══ Test 6: PostAnalytics ════════════════════════════════
+POST-001: 2 views, 1 likes
+getViews: 2
+getLikes: 1
+Test 6 PASSED
+
+═══ Test 7: PostRepository ══════════════════════════════
+[REPO] Saved POST-001
+count: 1
+found: Getting Started with Java
+findAll size: 1
+Test 7 PASSED
+
+═══ Test 8: BlogService — valid publish ═════════════════
+[REJECTED] OK
+published: false
+Test 8 PASSED
+
+═══ Test 9: BlogService — invalid post rejected ══════════
+[REPO] Saved POST-004
+Valid Title Here
+By Eve
+Too short.
+[PUBLISHED] POST-004
+rejected: false
+Test 9 PASSED
+
+═══ Test 10: SRP proof — one class, one reason ══════════
+Each class has one reason to change — verified by design.
+Test 10 PASSED
