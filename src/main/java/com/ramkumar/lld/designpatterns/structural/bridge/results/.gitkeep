@@ -1,0 +1,25 @@
+[Email] → alice@corp.com: Server maintenance tonight
+Test 1 — SimpleAlert via Email: PASSED
+[SMS] → +1-555-0101: Server maintenance tonight
+Test 2 — SimpleAlert via SMS: PASSED
+[Email] → alice@corp.com: [PRIORITY] Server down!
+Test 3 — PriorityAlert via Email: PASSED
+[SMS] → +1-555-0101: [PRIORITY] Server down!
+Test 4 — PriorityAlert via SMS: PASSED
+[Email] → bob@corp.com: Scheduled downtime
+[Email] → carol@corp.com: Scheduled downtime
+Test 5 — Reuse same alert instance: PASSED
+[Email] → ops-team: Disk usage 90%
+[SMS] → ops-team: Disk usage 90%
+Test 6a — channel-swap (Email): PASSED
+Test 6b — channel-swap (SMS):   PASSED
+[Email] → devs: Build failed
+[Email] → devs: [PRIORITY] Build failed
+Test 7a — alert-type-swap (Simple):   PASSED
+Test 7b — alert-type-swap (Priority): PASSED
+Test 8 — polymorphic Alert[]:
+[Email] → all-staff@corp.com: Year-end party!
+  → [Email] → all-staff@corp.com: Year-end party!
+[Email] → all-staff@corp.com: [PRIORITY] Year-end party!
+  → [Email] → all-staff@corp.com: [PRIORITY] Year-end party!
+Test 8 — PASSED if 2 lines printed: one plain, one with [PRIORITY] prefix

@@ -1,0 +1,57 @@
+/Users/ramkumar/.jenv/versions/21/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=59654 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/ramkumar/Learning/java-lld/target/classes com.ramkumar.lld.designpatterns.creational.builder.practice.ServerConfigPractice
+═══ Test 1: Minimal config — only required fields ═══════════
+ServerConfig{host='localhost', port=8080, maxConnections=100, connectionTimeoutMs=5000, readTimeoutMs=30000, keepAlive=false, ssl=false}
+Test 1 PASSED
+
+═══ Test 2: Full config — all optional fields set ═══════════
+ServerConfig{host='prod-db.internal', port=5432, maxConnections=500, connectionTimeoutMs=3000, readTimeoutMs=15000, keepAlive=true, ssl=true}
+Test 2 PASSED
+
+═══ Test 3: Immutability — no setters on ServerConfig ═══════
+Test 3 PASSED — ServerConfig has no setters (compile-time check)
+
+═══ Test 4: toString() format ═══════════════════════════════
+Expected: ServerConfig{host='api.example.com', port=443, maxConnections=200, connectionTimeoutMs=2000, readTimeoutMs=10000, keepAlive=true, ssl=true}
+Actual:   ServerConfig{host='api.example.com', port=443, maxConnections=200, connectionTimeoutMs=2000, readTimeoutMs=10000, keepAlive=true, ssl=true}
+Test 4 PASSED
+
+═══ Test 5: Blank host → IAE ════════════════════════════════
+Caught IAE: host must not be blank
+Test 5 PASSED
+
+═══ Test 6: Port 0 → IAE ════════════════════════════════════
+Caught IAE: port must be between 1 and 65535
+Test 6 PASSED
+
+═══ Test 7: Port 65536 → IAE ════════════════════════════════
+Caught IAE: port must be between 1 and 65535
+Test 7 PASSED
+
+═══ Test 8: maxConnections 0 → IAE ══════════════════════════
+Caught IAE: maxConnections must be >= 1
+Test 8 PASSED
+
+═══ Test 9: Negative connectionTimeoutMs → IAE ══════════════
+Caught IAE: connectionTimeoutMs must be >= 1
+Test 9 PASSED
+
+═══ Test 10: SSL without certPath → ISE ═════════════════════
+Caught ISE: ssl requires certPath
+Test 10 PASSED
+
+═══ Test 11: SSL without keyPath → ISE ══════════════════════
+Caught ISE: ssl requires keyPath
+Test 11 PASSED
+
+═══ Test 12: Fluent chain — same Builder returned each time ═
+Same builder instance returned: true
+Test 12 PASSED
+
+═══ Test 13: SSL with both paths → success ══════════════════
+Test 13 PASSED
+
+═══ Test 14: certPath/keyPath absent from toString ═══════════
+toString: ServerConfig{host='vault.internal', port=8200, maxConnections=100, connectionTimeoutMs=5000, readTimeoutMs=30000, keepAlive=false, ssl=true}
+Test 14 PASSED — cert/key paths hidden
+
+Process finished with exit code 0

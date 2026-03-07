@@ -1,0 +1,21 @@
+Test 1a — label: PASSED
+Test 1b — cost:  PASSED
+Test 2a — label: PASSED
+Test 2b — cost:  PASSED
+Test 3a — label: PASSED
+Test 3b — cost:  PASSED
+Test 4a — label: PASSED
+Test 4b — cost:  PASSED
+Test 5a — label: PASSED
+Test 5b — cost:  PASSED
+Test 6a — label: PASSED
+Test 6b — cost:  PASSED
+Test 7 — order matters (same cost, different label): PASSED
+  HD-first label:     Basic Plan + HD + Family Sharing
+  Family-first label: Basic Plan + Family Sharing + HD
+Test 8 — polymorphic catalog:
+  $9.99/mo  —  Basic Plan
+  $12.99/mo  —  Basic Plan + HD
+  $17.99/mo  —  Basic Plan + HD + Family Sharing
+  $19.99/mo  —  Basic Plan + HD + Family Sharing + Offline Downloads
+Test 8 — PASSED if all 4 plans printed correctly above

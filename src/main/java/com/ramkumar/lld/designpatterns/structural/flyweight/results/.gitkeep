@@ -1,0 +1,14 @@
+Test 1 — getPieceType returns non-null: PASSED
+Test 2 — same call returns same instance (==): PASSED
+Test 3 — different color = different instance: PASSED
+Test 4 — cache size = 3 after 3 unique types: PASSED
+[White Pawn] at (1, 0)
+Test 5 — render format: PASSED
+Test 6 — 8 White Pawns share 1 flyweight, cache size = 1: PASSED
+Test 7 — 32 pieces use 12 unique flyweights: PASSED
+[White Queen] at (7, 3)
+[White Queen] at (4, 4)
+[White Queen] at (7, 3)
+Test 8a — render at (7,3): PASSED
+Test 8b — render at (4,4): PASSED
+Test 8c — no state corruption, back to (7,3): PASSED

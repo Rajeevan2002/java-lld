@@ -1,0 +1,16 @@
+[TeamLead] Approved "Office Supplies" $499.99
+[Manager] Approved "Ergonomic Chairs x10" $4500.00
+[TeamLead] Approved "Keyboard" $800.00
+[Manager] Approved "Laptop Fleet" $7200.00
+[Director] Approved "Office Reno" $35000.00
+[CEO] Approved "New HQ" $500000.00
+Test 4 — setNext returns next: PASSED
+[Chain] No approver for "Corporate Jet" $2000000.00
+[TeamLead] Approved "USB Hub" $25.00
+[TeamLead] Approved "At TL limit" $1000.00
+[Manager] Approved "Just over TL" $1000.01
+[Manager] Approved "At Mgr limit" $10000.00
+[Director] Approved "Just over Mgr" $10000.01
+[TeamLead] Approved "Monitor" $350.00
+[Manager] Approved "Workshop" $8000.00
+[CEO] Approved "Data Center" $200000.00

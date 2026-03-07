@@ -1,0 +1,11 @@
+Test 1 — empty hasNext(): PASSED
+Test 2 — single order iterator: PASSED
+Test 3 — insertion order: PASSED
+Test 4 — NoSuchElementException: PASSED
+Test 5 — independent iterators: PASSED
+Test 6 — for-each count: PASSED
+Test 7 — status filter PENDING: PASSED
+Test 8 — status filter no match: PASSED
+Test 9a — size before add: PASSED
+Test 9b — size after 2 adds: PASSED
+Test 9c — full throws: PASSED

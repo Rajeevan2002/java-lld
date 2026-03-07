@@ -1,0 +1,23 @@
+Test 1 — Individual getName: PASSED
+Test 1 — Individual getSalary: PASSED
+Test 2 — Team getSalary (Alice+Bob): PASSED
+Test 3 — Individual display (verify output below):
+[Employee] Alice (Engineer) $90000.00
+Test 4 — Team display (verify output below):
+[Team] Engineering $190000.00
+  [Employee] Alice (Engineer) $90000.00
+  [Employee] Bob (Designer) $100000.00
+Test 5 — Nested getSalary (Engineering+Product): PASSED
+Test 6 — Nested display (verify output below):
+[Team] Company $310000.00
+  [Team] Engineering $190000.00
+    [Employee] Alice (Engineer) $90000.00
+    [Employee] Bob (Designer) $100000.00
+  [Team] Product $120000.00
+    [Employee] Carol (Product Manager) $120000.00
+Test 7 — Empty team salary: PASSED
+Test 8 — polymorphic OrgUnit[] catalog:
+  Alice           salary=$90,000.00
+  Engineering     salary=$190,000.00
+  Company         salary=$310,000.00
+Test 8 — PASSED if 3 lines printed with correct salaries (90000, 190000, 310000)

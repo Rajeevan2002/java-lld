@@ -1,0 +1,24 @@
+[Proxy] ADMIN → generateReport(Sales)
+[ReportService] Generating Sales report
+Test 1 — ADMIN generateReport: PASSED
+[Proxy] VIEWER → generateReport(Summary)
+[ReportService] Generating Summary report
+Test 2 — VIEWER generateReport: PASSED
+[Proxy] ANALYST → exportData(CSV)
+[ReportService] Exporting data as CSV
+Test 3 — ANALYST exportData: PASSED
+Test 4 — VIEWER exportData blocked: PASSED
+Test 5 — ADMIN purgeOldReports(30) (expect [Proxy] + [ReportService] lines below):
+[Proxy] ADMIN → purgeOldReports(30)
+[ReportService] Purging reports older than 30 days
+Test 5 — PASSED if both lines printed above
+Test 6 — ANALYST purge blocked: PASSED
+Test 7 — daysOld validation: PASSED
+
+Test 8 — polymorphic usage:
+[ReportService] Generating Annual report
+[Proxy] ADMIN → generateReport(Annual)
+[ReportService] Generating Annual report
+  direct  result: report-Annual-2024
+  proxied result: report-Annual-2024
+Test 8 — PASSED if both results equal 'report-Annual-2024'
