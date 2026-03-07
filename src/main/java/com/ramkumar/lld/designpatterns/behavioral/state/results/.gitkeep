@@ -1,0 +1,34 @@
+Test 1 — initial status: PASSED
+[Draft] "API Design" submitted for review.
+Test 2 — after submit: PASSED
+[Draft] Cannot approve "Budget Report" — submit for review first.
+Test 3 — approve from DRAFT stays DRAFT: PASSED
+[Draft] "Security Policy" submitted for review.
+[Review] "Security Policy" approved.
+Test 4 — after approve: PASSED
+[Draft] "Hiring Plan" submitted for review.
+[Review] "Hiring Plan" rejected.
+Test 5 — after reject: PASSED
+[Draft] "Privacy Policy" submitted for review.
+[Review] "Privacy Policy" approved.
+[Approved] "Privacy Policy" cannot be re-submitted.
+[Approved] "Privacy Policy" is already approved.
+[Approved] "Privacy Policy" cannot be rejected after approval.
+Test 6 — APPROVED is terminal: PASSED
+[Draft] "Refund Policy" submitted for review.
+[Review] "Refund Policy" rejected.
+[Rejected] "Refund Policy" re-submitted for review.
+Test 7 — re-submitted from REJECTED: PASSED
+Test 8 — full happy path:
+  DRAFT
+[Draft] "Employee Handbook" submitted for review.
+  IN_REVIEW
+[Review] "Employee Handbook" approved.
+  APPROVED
+Test 8 — APPROVED at end: PASSED
+[Draft] "Travel Policy" submitted for review.
+[Review] "Travel Policy" rejected.
+[Rejected] "Travel Policy" cannot be approved — re-submit first.
+[Rejected] "Travel Policy" re-submitted for review.
+[Review] "Travel Policy" approved.
+Test 9 — reject → resubmit → approve: PASSED

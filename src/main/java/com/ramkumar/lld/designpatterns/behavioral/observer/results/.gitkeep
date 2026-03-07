@@ -1,0 +1,16 @@
+[Phone:Alice] 28.5°C  65% humidity
+[WebDashboard] 28.5°C | 65% RH | 1013.2 hPa
+[ALERT] Heat warning: 35.0°C exceeds threshold 35.0°C
+Observer count: 3
+[Phone:Bob] 22.0°C  55% humidity
+[WebDashboard] 22.0°C | 55% RH | 1015.0 hPa
+After unsubscribe: 2
+[Phone:Bob] 36.0°C  80% humidity
+[ALERT] Heat warning: 36.0°C exceeds threshold 35.0°C
+Test 7 — null guard: PASSED
+Before trigger: 3
+[Phone:Carol] 25.0°C  60% humidity
+[OneShot] 25.0°C — unsubscribing
+[Phone:Dave] 25.0°C  60% humidity
+After trigger: 2
+Test 8 — self-unsubscribe no CME: PASSED

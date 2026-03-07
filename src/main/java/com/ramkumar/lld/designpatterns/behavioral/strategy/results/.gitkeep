@@ -1,0 +1,29 @@
+[Standard] 4.00 kg  → $14.00
+Test 1 — Standard 4kg: PASSED
+[Standard] 1.00 kg  → $5.00
+Test 2 — Standard minimum $5.00: PASSED
+[Express] 3.00 kg → $31.00
+Test 3 — Express 3kg: PASSED
+[Overnight] 2.00 kg, $500.00 declared → $40.00
+Test 4 — Overnight 2kg $500: PASSED
+[Standard] 4.00 kg  → $14.00
+[Order ORD-001] shipping cost: $14.00
+Test 5 — Order checkout Standard: PASSED
+[Standard] 3.00 kg  → $10.50
+[Order ORD-002] shipping cost: $10.50
+[Express] 3.00 kg → $31.00
+[Order ORD-002] shipping cost: $31.00
+[Overnight] 3.00 kg, $150.00 declared → $48.00
+[Order ORD-002] shipping cost: $48.00
+Test 6a — swap to Express: PASSED
+Test 6b — swap to Overnight: PASSED
+Test 7 — zero weight throws IAE: PASSED
+[Standard] 4.00 kg  → $14.00
+[Order ORD-POLY-0] shipping cost: $14.00
+[Express] 4.00 kg → $38.00
+[Order ORD-POLY-1] shipping cost: $38.00
+  FAILED tier 1 got 38.0
+[Overnight] 4.00 kg, $200.00 declared → $64.00
+[Order ORD-POLY-2] shipping cost: $64.00
+  FAILED tier 2 got 64.0
+Test 8 — polymorphic strategies: FAILED

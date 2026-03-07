@@ -1,0 +1,70 @@
+/Users/ramkumar/.jenv/versions/21/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=55668 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/ramkumar/Learning/java-lld/target/classes com.ramkumar.lld.designpatterns.creational.singleton.practice.GameScoreBoardPractice
+═══ Test 1: getInstance() returns non-null ══════════════
+board != null: true
+Test 1 PASSED: true
+
+═══ Test 2: Same instance on repeated calls ═════════════
+ref1 == ref2: true
+ref2 == ref3: true
+Test 2 PASSED: true
+
+═══ Test 3: recordScore and getScore ════════════════════
+[ScoreBoard] Alice: 1500
+[ScoreBoard] Bob: 1200
+[ScoreBoard] Charlie: 1800
+Alice:   1500
+Bob:     1200
+Charlie: 1800
+Test 3 PASSED: true
+
+═══ Test 4: recordScore — keeps higher score ════════════
+[ScoreBoard] Alice: 1500
+[ScoreBoard] Bob: 2000
+Alice after lower submit:  1500
+Bob after higher submit:   2000
+Test 4 PASSED: true
+
+═══ Test 5: getTopPlayers(2) returns top 2 sorted ═══════
+Top 2: [Bob, Charlie]
+First place: Bob
+Second place: Charlie
+Test 5 PASSED: true
+
+═══ Test 6: getTopPlayers(10) returns all when fewer exist ═
+Requested 10, got: 3
+Test 6 PASSED: true
+
+═══ Test 7: getTopPlayers returns unmodifiable list ═══════
+Test 7 PASSED — getTopPlayers() returns unmodifiable list
+
+═══ Test 8: hasPlayer ════════════════════════════════════
+hasPlayer(Alice):  true
+hasPlayer(Dave):   false
+Test 8 PASSED: true
+
+═══ Test 9: getPlayerCount ══════════════════════════════
+Player count: 3
+Test 9 PASSED: true
+
+═══ Test 10: getScore on unknown player — throws ═════════
+Caught: Player not found: UnknownPlayer
+Test 10 PASSED — unknown player throws IAE
+
+═══ Test 11: reset() clears scores, singleton survives ════
+[ScoreBoard] Board reset.
+Player count after reset: 0
+Same instance after reset: true
+Uptime still counting (>= 0): true
+boardCreatedAt preserved (uptime > 0): true
+Test 11 PASSED: true
+
+═══ Test 12: recordScore works after reset ═══════════════
+[ScoreBoard] Dave: 500
+Dave after reset + record: 500
+Test 12 PASSED: true
+
+═══ Test 13: Reflection attack blocked ══════════════════
+Reflection blocked: InvocationTargetException
+Test 13 PASSED — constructor defence works
+
+Process finished with exit code 0

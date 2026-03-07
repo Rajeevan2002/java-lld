@@ -1,0 +1,122 @@
+/Users/ramkumar/.jenv/versions/21/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=58333 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/ramkumar/Learning/java-lld/target/classes com.ramkumar.lld.designpatterns.creational.abstractfactory.practice.CloudInfrastructurePractice
+═══ Test 1: AWS compute returns aws-i- prefix ══════════════
+[EC2] Launching 4-core/16GB → aws-i-00001
+
+Instance ID: aws-i-00001
+Test 1 PASSED
+
+═══ Test 2: Azure compute returns azure-vm- prefix ═════════
+[AzureVM] Launching 2-core/8GB → azure-vm-00001
+
+Instance ID: azure-vm-00001
+Test 2 PASSED
+
+═══ Test 3: GCP compute returns gcp-gce- prefix ════════════
+[GCE] Launching 8-core/32GB → gcp-gce-00001
+
+Instance ID: gcp-gce-00001
+Test 3 PASSED
+
+═══ Test 4: AWS family consistency — all products return 'AWS' ═
+Compute:  AWS
+Storage:  AWS
+Database: AWS
+Test 4 PASSED
+
+═══ Test 5: Azure family consistency — all return 'Azure' ═════
+Test 5 PASSED
+
+═══ Test 6: GCP family consistency — all return 'GCP' ══════════
+Test 6 PASSED
+
+═══ Test 7: ObjectStorage — upload then download ════════════════
+[S3] Uploaded my-bucket/config/app.json (14 bytes)
+
+Downloaded: {"env":"prod"}
+Test 7 PASSED
+
+═══ Test 8: ManagedDatabase — createTable + insert + query ═════
+[RDS] Created table 'users'
+[RDS] INSERT into 'users': alice@example.com
+
+[RDS] INSERT into 'users': bob@example.com
+
+Records: [alice@example.com, bob@example.com]
+Test 8 PASSED
+
+═══ Test 9: ManagedDatabase.query returns unmodifiable list ════
+Test 9 PASSED — query() returns unmodifiable list
+
+═══ Test 10: InfrastructureDeployer with AWS ═════════════════
+[Deployer] Deploying 'payment-service' on AWS
+[EC2] Launching 2-core/8GB → aws-i-00001
+
+[RDS] Created table 'payment-service_events'
+[RDS] INSERT into 'payment-service_events': Deployed: aws-i-00001
+
+[S3] Uploaded app-configs/payment-service/latest (20 bytes)
+
+[Deployer] Cost: $0.096/hr
+Deployed instance: aws-i-00001
+Test 10 PASSED
+
+═══ Test 11: InfrastructureDeployer with Azure ══════════════
+[Deployer] Deploying 'payment-service' on Azure
+[AzureVM] Launching 2-core/8GB → azure-vm-00001
+
+[AzureSQL] Created table 'payment-service_events'
+[AzureSQL] INSERT into 'payment-service_events': Deployed: azure-vm-00001
+
+[Blob] Uploaded app-configs/payment-service/latest (23 bytes)
+
+[Deployer] Cost: $0.104/hr
+Deployed instance: azure-vm-00001
+Test 11 PASSED
+
+═══ Test 12: InfrastructureDeployer with GCP ════════════════
+[Deployer] Deploying 'payment-service' on GCP
+[GCE] Launching 2-core/8GB → gcp-gce-00001
+
+[BigQuery] Created table 'payment-service_events'
+[BigQuery] INSERT into 'payment-service_events': Deployed: gcp-gce-00001
+
+[GCS] Uploaded app-configs/payment-service/latest (22 bytes)
+
+[Deployer] Cost: $0.088/hr
+Deployed instance: gcp-gce-00001
+Test 12 PASSED
+
+═══ Test 13: Same deployer code, three providers (polymorphism) ═
+[Deployer] Deploying 'analytics' on AWS
+[EC2] Launching 4-core/16GB → aws-i-00001
+
+[RDS] Created table 'analytics_events'
+[RDS] INSERT into 'analytics_events': Deployed: aws-i-00001
+
+[S3] Uploaded app-configs/analytics/latest (20 bytes)
+
+[Deployer] Cost: $0.192/hr
+  AWS: id=aws-i-00001 → OK
+[Deployer] Deploying 'analytics' on Azure
+[AzureVM] Launching 4-core/16GB → azure-vm-00001
+
+[AzureSQL] Created table 'analytics_events'
+[AzureSQL] INSERT into 'analytics_events': Deployed: azure-vm-00001
+
+[Blob] Uploaded app-configs/analytics/latest (23 bytes)
+
+[Deployer] Cost: $0.208/hr
+  Azure: id=azure-vm-00001 → OK
+[Deployer] Deploying 'analytics' on GCP
+[GCE] Launching 4-core/16GB → gcp-gce-00001
+
+[BigQuery] Created table 'analytics_events'
+[BigQuery] INSERT into 'analytics_events': Deployed: gcp-gce-00001
+
+[GCS] Uploaded app-configs/analytics/latest (22 bytes)
+
+[Deployer] Cost: $0.176/hr
+  GCP: id=gcp-gce-00001 → OK
+Test 13 PASSED
+
+Process finished with exit code 0

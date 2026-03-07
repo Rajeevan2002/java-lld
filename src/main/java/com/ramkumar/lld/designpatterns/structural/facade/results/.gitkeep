@@ -1,0 +1,33 @@
+Test 1 — Facade constructed: PASSED
+  [FlightService] Found FL-LON-PAR-01 (London→Paris on 2026-06-01)
+  [FlightService] Booked FL-LON-PAR-01 → ref BK-FL-LON-PAR-01
+  [HotelService] Found HTL-PAR-01 (Paris, 3 nights)
+  [HotelService] Reserved HTL-PAR-01 → ref RSV-HTL-PAR-01
+  [CarRental] Found CAR-PAR-01 in Paris
+  [CarRental] Rented CAR-PAR-01 → ref RNT-CAR-PAR-01
+  [Payment] Charged $500.00 → receipt RCP-50000
+  [Email] Confirmation → alice@example.com: Flight:BK-FL-LON-PAR-01 | Hotel:RSV-HTL-PAR-01 | Car:RNT-CAR-PAR-01 | Receipt:RCP-50000
+[TravelFacade] Trip booked: London → Paris on 2026-06-01
+Test 2 — trip not null: PASSED
+Test 3 — flightRef starts BK-FL-: PASSED
+Test 4 — hotelRef starts RSV-HTL-: PASSED
+Test 5 — carRef starts RNT-CAR-: PASSED
+Test 6 — receiptId is RCP-50000: PASSED
+Test 7 — customerEmail stored: PASSED
+  [FlightService] Found FL-NYC-TOK-02 (NYC→Tokyo on 2026-07-15)
+  [FlightService] Booked FL-NYC-TOK-02 → ref BK-FL-NYC-TOK-02
+  [HotelService] Found HTL-TOK-02 (Tokyo, 5 nights)
+  [HotelService] Reserved HTL-TOK-02 → ref RSV-HTL-TOK-02
+  [CarRental] Found CAR-TOK-02 in Tokyo
+  [CarRental] Rented CAR-TOK-02 → ref RNT-CAR-TOK-02
+  [Payment] Charged $500.00 → receipt RCP-50000
+  [Email] Confirmation → bob@example.com: Flight:BK-FL-NYC-TOK-02 | Hotel:RSV-HTL-TOK-02 | Car:RNT-CAR-TOK-02 | Receipt:RCP-50000
+[TravelFacade] Trip booked: NYC → Tokyo on 2026-07-15
+Test 8 — unique flight refs: PASSED
+  [FlightService] Cancelled BK-FL-LON-PAR-01
+  [HotelService] Cancelled reservation RSV-HTL-PAR-01
+  [CarRental] Returned RNT-CAR-PAR-01
+  [Payment] Refunded RCP-50000
+  [Email] Cancellation → alice@example.com: Trip cancelled: BK-FL-LON-PAR-01
+[TravelFacade] Trip cancelled for alice@example.com
+Test 9 — cancelTrip completed: PASSED

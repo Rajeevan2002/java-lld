@@ -1,0 +1,28 @@
+/Users/ramkumar/.jenv/versions/21/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=59981 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/ramkumar/Learning/java-lld/target/classes com.ramkumar.lld.designpatterns.structural.adapter.practice.PaymentProcessorPractice
+  [StripeClient] createCharge(1550 cents, cus-alice)
+[Stripe] Charged $15.50 -> ch_60e-434063372
+Test 1 — non-blank charge ID: PASSED
+  [StripeClient] createCharge(1550 cents, cus-bob)
+[Stripe] Charged $15.50 -> ch_60e1125805097
+Test 2 — cents conversion: PASSED
+  [StripeClient] reverseCharge(ch_abc123)
+[Stripe] Refunded ch_abc123
+Test 3 — stripe refund returns true: PASSED
+  [PayPalSDK] submitPayment(25.00, user@example.com) → approved=true
+[PayPal] Charged $25.00 → PP-2500-16
+Test 4 — paypal charge approved: PASSED
+  [PayPalSDK] submitPayment(10.00, fail@example.com) → approved=false
+Test 5 — paypal charge declined throws ISE: FAILED
+  [PayPalSDK] cancelTransaction(PP-2500-15) → true
+[PayPal] Refund PP-2500-15 : OK
+Test 6 — paypal refund success: PASSED
+  [PayPalSDK] cancelTransaction(PP-FAIL-001) → false
+[PayPal] Refund PP-FAIL-001 : FAILED
+Test 7 — paypal refund fail: PASSED
+  [StripeClient] createCharge(500 cents, cus-carol)
+[Stripe] Charged $5.00 -> ch_1f4-432535003
+  [PayPalSDK] submitPayment(5.00, dave@example.com) → approved=true
+[PayPal] Charged $5.00 → PP-500-16
+Test 8 — polymorphic charge: PASSED
+
+Process finished with exit code 0

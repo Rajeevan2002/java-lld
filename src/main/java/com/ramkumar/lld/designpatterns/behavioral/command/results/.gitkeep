@@ -1,0 +1,45 @@
+initially on: false
+default brightness: 50
+[Kitchen] Light ON (brightness 50%)
+on after turnOn: true
+[Kitchen] Light OFF
+on after turnOff: false
+[Lamp] Brightness → 80%
+brightness: 80
+Test 2 — out-of-range: FAILED (msg: brightness must be 0-100)
+[Living Room] Light ON (brightness 50%)
+on: true
+[Living Room] Light OFF
+on after undo: false
+[Bedroom] Light ON (brightness 50%)
+[Bedroom] Light OFF
+on: false
+[Bedroom] Light ON (brightness 50%)
+on after undo: true
+[Studio] Brightness → 30%
+[Studio] Brightness → 60%
+[Studio] Brightness → 90%
+brightness: 90
+[Studio] Brightness → 60%
+after undo brightness: 60
+[Hall] Light ON (brightness 50%)
+[Hall] Brightness → 70%
+[Hall] Light OFF
+history size: 3
+[Hall] Light ON (brightness 70%)
+[Hall] Brightness → 50%
+[Hall] Light OFF
+history after 3 undos: 0
+[Controller] Nothing to undo
+[Spare] Light ON (brightness 50%)
+[Spare] Light OFF
+[Controller] Nothing to undo
+[Garage] Light ON (brightness 50%)
+[Garage] Brightness → 100%
+[Garage] Brightness → 20%
+[Garage] Light OFF
+after schedule, history: 4
+final state on: false
+[Garage] Light ON (brightness 20%)
+[Garage] Brightness → 100%
+history left: 2

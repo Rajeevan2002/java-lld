@@ -1,0 +1,67 @@
+/Users/ramkumar/.jenv/versions/21/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=59765 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/ramkumar/Learning/java-lld/target/classes com.ramkumar.lld.designpatterns.creational.prototype.practice.GameCharacterPractice
+═══ Test 1: Clone Warrior — all fields copied ═══════════════
+Item : Battleaxe added to the Inventory
+Item : Iron Shield added to the Inventory
+Clone: Warrior{name='Thorin', level=40, armor=350, inventory=[Battleaxe, Iron Shield]}
+Test 1 PASSED
+
+═══ Test 2: Deep copy — clone inventory independent from original ═
+Item : War Hammer added to the Inventory
+Original inventory: [Battleaxe, Iron Shield]
+Clone inventory:    [Battleaxe, Iron Shield, War Hammer]
+Test 2 PASSED
+
+═══ Test 3: Mutate clone — original unchanged ════════════════
+Original: Warrior{name='Thorin', level=40, armor=350, inventory=[Battleaxe, Iron Shield]}
+Clone:    Warrior{name='Thorin Boss', level=99, armor=350, inventory=[Battleaxe, Iron Shield, War Hammer]}
+Test 3 PASSED
+
+═══ Test 4: Clone Mage — all fields copied ═══════════════════
+Item : Staff of Power added to the Inventory
+Item : Spell Tome added to the Inventory
+Clone: Mage{name='Gandalf', level=60, manaPool=500, inventory=[Staff of Power, Spell Tome]}
+Test 4 PASSED
+
+═══ Test 5: Clone Archer — covariant return (no cast needed) ═
+Item : Elven Bow added to the Inventory
+Original arrow count: 200
+Clone arrow count:    300
+Test 5 PASSED
+
+═══ Test 6: getInventory returns unmodifiable view ═══════════
+Test 6 PASSED — getInventory() returns unmodifiable view
+
+═══ Test 7: addItem — blank item → IAE ══════════════════════
+Caught IAE: item must not be blank
+Test 7 PASSED
+
+═══ Test 8: removeItem — item not present → NSE ══════════════
+Caught NSE: item not found: Dragon Scale
+Test 8 PASSED
+
+═══ Test 9: removeItem — present item removed correctly ══════
+Item : Sword added to the Inventory
+Item : Potion added to the Inventory
+After remove: [Potion]
+Test 9 PASSED
+
+═══ Test 10: Polymorphic clone — clone via base reference ════
+  Original: Knight | Clone: Knight Copy
+  Original: Wizard | Clone: Wizard Copy
+  Original: Hunter | Clone: Hunter Copy
+Test 10 PASSED
+
+═══ Test 11: Deep copy — remove from original, clone unchanged ═
+Item : Crystal Ball added to the Inventory
+Item : Arcane Tome added to the Inventory
+Original: [Arcane Tome]
+Clone:    [Crystal Ball, Arcane Tome]
+Test 11 PASSED
+
+═══ Test 12: toString() format correct for all three types ═══
+Warrior{name='Rex', level=10, armor=100, inventory=[]}
+Mage{name='Zara', level=20, manaPool=300, inventory=[]}
+Archer{name='Swift', level=15, arrowCount=50, inventory=[]}
+Test 12 PASSED
+
+Process finished with exit code 0

@@ -1,0 +1,55 @@
+[AuctionHouse] Alice registered for "Vintage Watch"
+[AuctionHouse] Alice leads with $500.00 for "Vintage Watch"
+[AuctionHouse] Alice registered for "Antique Vase"
+[AuctionHouse] Bob registered for "Antique Vase"
+[AuctionHouse] Alice leads with $300.00 for "Antique Vase"
+[Bob] Outbid by Alice at $300.00
+[AuctionHouse] Bob leads with $450.00 for "Antique Vase"
+[Alice] Outbid by Bob at $450.00
+[AuctionHouse] Alice registered for "Oil Painting"
+[AuctionHouse] Bob registered for "Oil Painting"
+[AuctionHouse] Alice leads with $600.00 for "Oil Painting"
+[Bob] Outbid by Alice at $600.00
+[AuctionHouse] Bob bid $400.00 rejected — Alice leads at $600.00
+[AuctionHouse] Alice registered for "Sculpture"
+[AuctionHouse] Bob registered for "Sculpture"
+[AuctionHouse] Carol registered for "Sculpture"
+[AuctionHouse] Alice leads with $200.00 for "Sculpture"
+[Bob] Outbid by Alice at $200.00
+[Carol] Outbid by Alice at $200.00
+[AuctionHouse] Alice registered for "Diamond Ring"
+[AuctionHouse] Bob registered for "Diamond Ring"
+[AuctionHouse] Alice leads with $1000.00 for "Diamond Ring"
+[Bob] Outbid by Alice at $1000.00
+[AuctionHouse] Bob leads with $1500.00 for "Diamond Ring"
+[Alice] Outbid by Bob at $1500.00
+[AuctionHouse] Auction closed! "Diamond Ring" won by Bob at $1500.00
+[Alice] Auction over — winner: Bob at $1500.00
+[Bob] Auction over — winner: Bob at $1500.00
+[AuctionHouse] Alice registered for "First Edition Book"
+[AuctionHouse] Bob registered for "First Edition Book"
+[AuctionHouse] Carol registered for "First Edition Book"
+[AuctionHouse] Alice leads with $100.00 for "First Edition Book"
+[Bob] Outbid by Alice at $100.00
+[Carol] Outbid by Alice at $100.00
+[AuctionHouse] Bob leads with $150.00 for "First Edition Book"
+[Alice] Outbid by Bob at $150.00
+[Carol] Outbid by Bob at $150.00
+[AuctionHouse] Carol bid $130.00 rejected — Bob leads at $150.00
+[AuctionHouse] Alice leads with $200.00 for "First Edition Book"
+[Bob] Outbid by Alice at $200.00
+[Carol] Outbid by Alice at $200.00
+[AuctionHouse] Auction closed! "First Edition Book" won by Alice at $200.00
+[Alice] Auction over — winner: Alice at $200.00
+[Bob] Auction over — winner: Alice at $200.00
+[Carol] Auction over — winner: Alice at $200.00
+Test 7 — structural: Bidder holds only mediator reference (code inspection)
+[AuctionHouse] Xavier registered for "Rare Coin"
+[AuctionHouse] Yasmin registered for "Rare Coin"
+[AuctionHouse] Xavier leads with $750.00 for "Rare Coin"
+[Yasmin] Outbid by Xavier at $750.00
+[AuctionHouse] Yasmin leads with $900.00 for "Rare Coin"
+[Xavier] Outbid by Yasmin at $900.00
+[AuctionHouse] Auction closed! "Rare Coin" won by Yasmin at $900.00
+[Xavier] Auction over — winner: Yasmin at $900.00
+[Yasmin] Auction over — winner: Yasmin at $900.00

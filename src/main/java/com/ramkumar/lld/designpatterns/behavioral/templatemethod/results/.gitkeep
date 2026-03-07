@@ -1,0 +1,17 @@
+[Tax] Gross: $100000.00 | Taxable: $88000.00 | Pre-credit: $19360.00 | Due: $19360.00
+Test 1 — Individual $100k: PASSED
+[Tax] Gross: $150000.00 | Taxable: $138000.00 | Pre-credit: $30360.00 | Due: $30360.00
+Test 2 — Individual $150k: PASSED
+[Tax] Gross: $500000.00 | Taxable: $400000.00 | Pre-credit: $84000.00 | Due: $79800.00
+Test 3 — Corporate $500k: PASSED
+[Tax] Gross: $1000000.00 | Taxable: $800000.00 | Pre-credit: $168000.00 | Due: $159600.00
+Test 4 — Corporate $1M: PASSED
+[Tax] Gross: $112000.00 | Taxable: $100000.00 | Pre-credit: $22000.00 | Due: $22000.00
+Test 5 — Individual no credits (pre-credit == final): PASSED
+[Tax] Gross: $500000.00 | Taxable: $400000.00 | Pre-credit: $84000.00 | Due: $79800.00
+Test 6 — Corporate credits applied (final < pre-credit): PASSED
+[Tax] Gross: $100000.00 | Taxable: $88000.00 | Pre-credit: $19360.00 | Due: $19360.00
+[Tax] Gross: $500000.00 | Taxable: $400000.00 | Pre-credit: $84000.00 | Due: $79800.00
+Test 7 — polymorphic calculate: PASSED
+[Tax] Gross: $200000.00 | Taxable: $180000.00 | Pre-credit: $27000.00 | Due: $27000.00
+Test 8 — anonymous subclass respects skeleton: PASSED
