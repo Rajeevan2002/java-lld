@@ -154,3 +154,38 @@
 - [ ] **Visibility modifiers** — `public` vs package-private vs `protected` vs `private`; minimise surface area; prefer package-private for helpers
 - [ ] **Static nested classes vs top-level classes** — when to nest (cohesion), when to extract (reuse)
 - [ ] **Comment conventions** — Javadoc for public API (`/** */`), inline for non-obvious logic (`//`), no redundant comments; when comments signal a design smell
+
+---
+
+## 4.6 Generics *(from the field guide, Week 1)*
+
+> Almost every LLD problem has a repository, cache or registry: "store objects of type T keyed by id". Write it once, generically.
+
+- [ ] Generic class — `Repository<T>` with `save`, `findById` (returns `Optional<T>`), `findAll`
+- [ ] Bounded type parameter — `Repository<T extends Identifiable>`; `extends` means "extends or implements"
+- [ ] Generic method — `static <T extends Comparable<T>> T max(List<T> list)` (why the double `T`)
+- [ ] Wildcards — `? extends` (read) vs `? super` (write); mnemonic **PECS**: Producer `extends`, Consumer `super`
+- [ ] Exercise size: **S** — write the repository and `max` from memory
+
+## 4.7 Exceptions and Fail-Fast Validation *(from the field guide, Week 1)*
+
+- [ ] Checked vs unchecked — `Exception` vs `RuntimeException`; prefer unchecked custom exceptions in LLD unless callers must recover
+- [ ] Custom exception — `class SpotNotAvailableException extends RuntimeException`, used with `orElseThrow(() -> new ...)`
+- [ ] Standard choices — `IllegalArgumentException` (bad input), `IllegalStateException` (wrong state), `NoSuchElementException` (missing)
+- [ ] Fail fast — validate at the boundary, throw immediately, never let invalid state propagate
+- [ ] Never swallow — an empty `catch (Exception e) {}` is an interview red flag
+- [ ] Exercise size: **S** — custom exception + a guarded `assignVehicle`
+
+---
+
+## Self-Check Quiz (answer cold; log misses in `MISTAKES-LOG.md`)
+
+1. When would you choose an abstract class over an interface, in one sentence?
+2. What does `<T extends Comparable<T>>` mean, and why the double `T`?
+3. Why does `LinkedHashMap` with `accessOrder=true` give you LRU eviction almost for free?
+4. What is the difference between `Comparable` and `Comparator`, and when is each expected?
+5. Should `SpotNotAvailableException` be checked or unchecked, and why?
+6. In double-checked locking, why is `volatile` required on the singleton field?
+7. Why does `ConcurrentHashMap.computeIfAbsent` avoid a race that a manual `if (map.get(k) == null) map.put(k, ...)` has?
+8. Why is `containsKey` followed by `get` a smell, and what replaces it?
+
