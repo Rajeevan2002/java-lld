@@ -78,7 +78,7 @@ src/main/java/com/ramkumar/lld/
 
 > Full topic documentation: [`javareadiness/README.md`](src/main/java/com/ramkumar/lld/javareadiness/README.md)
 
-- [ ] 4.0 Cheat Sheet — consolidated revision reference (collections + patterns + idioms)
+- [x] 4.0 Cheat Sheet — consolidated revision reference (collections + patterns + idioms)
 - [ ] 4.1 Collections Deep Dive — List, Set, Map, Queue/Deque, Algorithms, time complexity
 - [ ] 4.2 Recurring LLD Patterns — ID generation, Repository skeleton, validation, String.format
 - [ ] 4.3 Java 8–21 Idioms — Streams, Optional, Comparator, Records, Sealed classes, Switch expressions
