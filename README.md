@@ -123,7 +123,7 @@ Rules that keep it light:
 - [x] 4.0 Cheat Sheet — consolidated revision reference (collections + patterns + idioms), Loan Desk capstone, lambdas/streams guide
 - [x] 4.1 Collections Deep Dive — List, Set, Map, Queue/Deque, Algorithms, time complexity
 - [x] 4.2 Recurring LLD Patterns — ID generation, Repository skeleton, validation, String.format
-- [ ] 4.3 Java 8–21 Idioms — Streams, Optional, Comparator, Records, Sealed classes, Switch expressions
+- [x] 4.3 Java 8–21 Idioms — Streams, Optional, Comparator, Records, Sealed classes, Switch expressions
 - [ ] 4.4 Enums as Design Tools — state machine, EnumMap, EnumSet, Singleton enum
 - [ ] 4.5 Package Structure and Naming Conventions
 - [ ] 4.6 Generics — generic class, bounded types, `<T extends Comparable<T>>`, wildcards (PECS) *(new)*
